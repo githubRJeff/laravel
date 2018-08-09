@@ -101,11 +101,15 @@ Route::group(['middleware'=>['web']],function (){
         'as' =>'session2',
         'uses'=>'StudentController@session2',
     ]);
+	Route::get('form/index',['uses'=>'FormController@index']);
+	Route::any('form/create',['uses'=>'FormController@create']);
+	Route::any('form/save',['uses'=>'FormController@save']);
+    Route::any('form/update/{id}',['uses'=>'FormController@update']);
+
 });
 Route::any('response','StudentController@response');
 Route::any('activity0','StudentController@activity0');
 Route::group(['middleware'=>['activity']],function(){
 	Route::any('activity1','StudentController@activity1');
 	Route::any('activity2','StudentController@activity2');
-
 });
