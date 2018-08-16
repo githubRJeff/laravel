@@ -30,7 +30,7 @@
         <div class="col-md-3">
             @section('leftmenu')
                 <div class="list-group">
-                    <a href="{{ url('form/index') }}" class="list-group-item   {{ Request::getPathInfo() == '/form/index' ? 'active' : '' }}">学生列表</a>
+                    <a href="{{ url('form/index') }}" class="list-group-item   {{ Request::getPathInfo() != '/form/create' ? 'active' : '' }}">学生列表</a>
                     <a href="{{ url('/form/create') }}" class="list-group-item {{ Request::getPathInfo() == '/form/create' ? 'active' : '' }}">新增学生</a>
                 </div>
             @show
