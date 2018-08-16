@@ -17,7 +17,7 @@ class Form extends Model{
     {
         return $value;
     }
-    public function sex($index = null){
+    public function sextype($index = null){
         $arr = [
             self::SEX_UN => '未知',
             self::SEX_BOY => '男',

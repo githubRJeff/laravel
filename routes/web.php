@@ -105,7 +105,8 @@ Route::group(['middleware'=>['web']],function (){
 	Route::any('form/create',['uses'=>'FormController@create']);
 	Route::any('form/save',['uses'=>'FormController@save']);
     Route::any('form/update/{id}',['uses'=>'FormController@update']);
-
+    Route::any('form/detail/{id}',['uses'=>'FormController@detail']);
+    Route::any('form/delete/{id}',['uses'=>'FormController@delete']);
 });
 Route::any('response','StudentController@response');
 Route::any('activity0','StudentController@activity0');
@@ -113,3 +114,14 @@ Route::group(['middleware'=>['activity']],function(){
 	Route::any('activity1','StudentController@activity1');
 	Route::any('activity2','StudentController@activity2');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::any('uploads', ['uses' => 'FormController@uploads']);
+Route::any('mail', ['uses' => 'FormController@mail']);
+
+Route::any('cache1',['uses'=>'FormController@cache1']);
+Route::any('cache2',['uses'=>'FormController@cache2']);
+Route::any('error',['uses'=>'FormController@error']);
+Route::any('queue',['uses'=>'FormController@queue']);
